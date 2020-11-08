@@ -1,0 +1,45 @@
+hostname ""
+sv_password ""
+sv_voiceenable 0
+
+sv_contact "unknown"
+
+
+// rcon passsword
+sv_rcon_banpenalty 5
+sv_rcon_maxfailures 3
+
+// server logging
+log on
+sv_logbans 1
+sv_logecho 1
+sv_logfile 0
+sv_log_onefile 0
+
+// operation
+sv_lan 0
+sv_region 3 //Europa
+
+// fastdl
+sv_allowdownload 1
+sv_allowupload 1
+
+// ban
+exec banned_user.cfg
+exec banned_ip.cfg
+
+// murder
+mu_scoreboard_show_admins 1
+mu_show_bystander_tks 1
+mu_allow_admin_panel 1
+mu_tk_penalty_time 20
+mu_murderer_fogtime 240
+mu_flashlight_battery 10
+mu_delay_after_enough_players 10
+mu_localchat 0
+mu_localchat_range 550
+mu_disguise 1
+mu_disguise_removeonkill 1
+mu_moveafktospectator 1
+mu_show_spectate_info 1
+mu_roundlimit 5
