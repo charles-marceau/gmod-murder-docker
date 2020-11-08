@@ -28,7 +28,7 @@ docker run -d \
  -p 27015:27015/tcp \
  -e SERVER_RCON_PASSWORD="securePW" \
  --name "GmodMurderServer" \
- charlesmarceau3/gmod-murder-server
+ charlesmarceau3/gmod-murder-docker
 ```
 
 ## More documentation
