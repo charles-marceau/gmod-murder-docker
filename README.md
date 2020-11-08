@@ -1,5 +1,5 @@
 # Gmod dedicated server image - Murder
-This is a GMOD TTT server image, https://hub.docker.com/r/jusito/
+This is a Garry's mod murder server image. It is available on [DockerHub](https://hub.docker.com/repository/docker/charlesmarceau3/gmod-murder-docker).
 
 ## Important
 This docker image is based on [jusito's docker-ttt image](https://github.com/jusito/docker-ttt).
