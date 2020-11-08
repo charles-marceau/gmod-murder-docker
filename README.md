@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://github.com/charles-marceau/gmod-murder-docker/raw/master/assets/logo.png"><br>
+</p>
+
 # Gmod dedicated server image - Murder
 This is a Garry's mod murder server image. It is available on [DockerHub](https://hub.docker.com/repository/docker/charlesmarceau3/gmod-murder-docker).
 
