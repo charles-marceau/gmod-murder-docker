@@ -16,7 +16,7 @@ function configReplace() {
 	
 	count=$(grep -Poc "($source).+" "${CFG_PATH}")
 	
-	echo "[initConfig.sh]Request for replacing $source to $target, source is found $count times"
+	echo "[initConfigMurder.sh]Request for replacing $source to $target, source is found $count times"
 	
 	if [ "$count" == "1" ]; then
 		source=$(grep -Po "($source).+" "${CFG_PATH}" | sed 's/\\/\\\\/g' | sed 's/\//\\\//g')
@@ -28,7 +28,7 @@ function configReplace() {
 		echo "$target" >> "${CFG_PATH}"
 		
 	else
-		echo "[initConfig.sh]can't set $1 because there are multiple in"
+		echo "[initConfigMurder.sh]can't set $1 because there are multiple in"
 	fi
 }
 
@@ -49,9 +49,21 @@ murder_con_vars=(
     mu_show_spectate_info
     mu_roundlimit
 )
+
+get_value()
+{
+    variable_name=$1
+    variable_value=""
+    if set | grep -q "^$variable_name="; then
+        eval variable_value="\$$variable_name"
+    fi
+    echo "$variable_value"
+}
+
 for con_var in "${murder_con_vars[@]}"; do
-    env_var_name=$(echo "$con_var")
-    if [ -n "${env_var_name}" ]; then
-	    configReplace "$con_var" "$env_var_name"
+    env_var_name=$(echo "$con_var" | tr a-z A-Z)
+    env_var_value=$(get_value "$env_var_name")
+    if [ -n "$env_var_value" ]; then
+	    configReplace "$con_var" "$env_var_value"
     fi
 done

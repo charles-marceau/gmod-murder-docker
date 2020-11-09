@@ -8,6 +8,12 @@ COPY "prepareServer.sh" "/home/"
 COPY "initConfigMurder.sh" "/home/"
 COPY "server.cfg.default" "/home/server.cfg.default"
 
+RUN chown "$DOCKER_USER:$DOCKER_USER" /home/prepareServer.sh && \
+    chown "$DOCKER_USER:$DOCKER_USER" /home/initConfigMurder.sh && \
+    chmod a=rx /home/prepareServer.sh && \
+    chmod a=rx /home/initConfigMurder.sh
+
+
 USER "$USER_ID:$GROUP_ID"
 
 VOLUME "$SERVER_PATH"
